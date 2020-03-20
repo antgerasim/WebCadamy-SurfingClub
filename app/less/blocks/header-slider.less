@@ -1,8 +1,13 @@
+.slide-wrapper {
+    position: relative;
+    /*контролы будем размещать обсолютно относительно его же*/
+}
+
 .slide-item {
     display: flex;
     position: relative;
     justify-content: flex-end;
-    background-color: green;
+    //background-color: green;
 }
 
 .slide-item__desc {
@@ -51,9 +56,46 @@
     height: 572px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;    
+    background-size: cover;
+    box-shadow: -16px 25px 65px rgba(11, 12, 17, 0.2);
 }
 
 .slide-item__img--bg-1 {
     background-image: url("../img/img/img-header.jpg");
 }
+
+.slide-controls {
+    position: absolute;
+    width: 81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //bottom: 0;
+
+}
+
+.slide-controls-number {
+    font-family: "League Spartan", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ebebeb;  
+    margin-top: 5px;
+}
+
+.slide-controls-number__active{
+    color: #5da8ef;
+}
+
+.slide-controls-number__total{
+    color: #262626;
+}
+
+.slide-controls-number__dash{
+    
+}
+
+.slide-controls__left {}
+
+.slide-controls__right {}
