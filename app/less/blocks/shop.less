@@ -1,10 +1,46 @@
 .shop {
-    //padding-top: 95px;
+    padding-top: 95px;
+    padding-bottom: 110px;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        top: -405px;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 984px;
+        z-index: -1;
+        //background-color: grey;
+        // v5 min 1:31
+        //https://html5book.ru/css-background/#multiple-background
+        background-image: url("../img/bg/bg-lines.png"), url("../img/bg/bg-water.jpg");
+        background-repeat: repeat-y, no-repeat;// repeat-y for bg-image_1, no-repeat for bg-image_2
+        background-position: center, center;
+        background-size: initial, cover;
+
+    }
+}
+
+.shop-slider-wrapper {
+    height: 565px;
+    margin-bottom: 80px;
+    position: relative;
+
+}
+
+.shop-slider-special-holder {
+    position: absolute;
+    left: 0;
+    right: -85px;
+    margin-bottom: 50px;
 }
 
 .shop-slider {
     display: flex;
-    flex-direction: row;
+    //flex-direction: row;
     justify-content: space-between;
     //background-color: grey;
     //height: 435px;
@@ -12,12 +48,42 @@
     margin-bottom: 80px;
 }
 
+.shopSlider-controls {
+    position: relative;
+}
+
+.shopSlider-arrow {
+    width: 40px;
+    height: 48px;
+    padding: 15px;
+    //background-color: red;
+    position: absolute;
+    bottom: calc(120px + 80px);
+    z-index: 9;
+    cursor: pointer;
+
+    img {
+        vertical-align: top;
+    }
+}
+
+.shopSlider-arrow--left {
+    //left: -70px;    
+    transform: translate(0, 0); //x=0, y=-100%
+}
+
+.shopSlider-arrow--right {
+    right: -70px;
+    transform: translate(100%, 0); //x=100%, y=-100%
+}
+
+.shopSlider-right {}
+
 .board {
     position: relative;
-    width: 350px;
+    //width: 435px; no pint to set since owl carousel calcs with automatically
     height: 435px;
-    //margin-right: 85px;
-    //background-color: #ebd9d9;
+    margin-top: 130px;
 }
 
 .board__img-holder {
@@ -45,7 +111,7 @@
 
 .board-desc {
     width: 210px;
-   // background-color: #ecb8b8;
+    // background-color: #ecb8b8;
     position: absolute;
     top: 196px;
     left: 216px;
@@ -96,3 +162,15 @@
     letter-spacing: 5.4px;
     margin-left: 4px;
 }
+
+
+/* .owl-item{
+    width: 15% !important;
+}
+
+.owl-carousel .owl-stage-outer {
+   
+     overflow:visible !important; 
+  
+}
+ */

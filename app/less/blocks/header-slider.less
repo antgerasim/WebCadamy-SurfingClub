@@ -1,12 +1,19 @@
 .slide-wrapper {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    //padding-bottom: 95px;
     /*контролы будем размещать обсолютно относительно его же*/
 }
 
+#headerSlider.owl-carousel .owl-stage-outer{
+    overflow: visible; //элементы выходили за пределами (тень)
+}
+
 .slide-item {
-    display: flex;
-    position: relative;
+    display: flex;    
     justify-content: flex-end;
+    position: relative;
     //background-color: green;
 }
 
@@ -70,7 +77,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //bottom: 0;
+    //left: 0;
+    bottom: 0;//оносительно картинки а не тени
+    z-index: 2;
+
+    img{
+        vertical-align: middle;
+    }
 
 }
 
