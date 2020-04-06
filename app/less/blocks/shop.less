@@ -1,13 +1,18 @@
 .shop {
-    padding-top: 95px;
-    padding-bottom: 110px;
+    padding-top: 95px/2;
+    padding-bottom: 110px/2;
     position: relative;
+
+    @media (min-width: 1254px) {
+        padding-top: 95px;
+        padding-top: 110px;
+    }
 
     &:before {
         position: absolute;
         content: "";
-        top: -405px;
-        bottom: auto;
+        top: -330px;
+        bottom: 0;
         left: 0;
         right: 0;
         width: 100%;
@@ -19,7 +24,7 @@
         background-image: url("../img/bg/bg-lines.png"), url("../img/bg/bg-water.jpg");
         background-repeat: repeat-y, no-repeat; // repeat-y for bg-image_1, no-repeat for bg-image_2
         background-position: center, center;
-        background-size: initial, cover;
+        background-size: auto, cover;
 
     }
 }
@@ -34,16 +39,18 @@
 .shop-slider-special-holder {
     position: absolute;
     left: 0;
-    right: -85px;
-    margin-bottom: 50px;
+    right: 0px;
+
+    @media (min-width: 1394) {
+        right: -85px;
+    }
+
+
 }
 
 .shop-slider {
     display: flex;
-    //flex-direction: row;
     justify-content: space-between;
-    //background-color: grey;
-    //height: 435px;
     margin-top: 50px;
     margin-bottom: 80px;
 }
@@ -62,9 +69,13 @@
     padding: 15px;
     //background-color: red;
     position: absolute;
-    bottom: calc(120px + 80px);
+    bottom: 120px;
     z-index: 9;
     cursor: pointer;
+
+    @media (min-width: 1254px) {
+        bottom: calc(120px + 80px);
+    }
 
     img {
         vertical-align: top;
@@ -72,22 +83,54 @@
 }
 
 .shopSlider-arrow--left {
-    //left: -70px;    
-    transform: translate(0, 0); //x=0, y=-100%
+    left: -15px;
+
+    @media (min-width: 650px) {
+        transform: translate(100%, 0%); //x=-100%, y=0%
+        left: 0px;
+    }
+
+    @media (min-width: 1334px) { 
+
+        left: 0px;
+        transform: translate(-100%, 0%);
+    }
 }
 
 .shopSlider-arrow--right {
-    right: -70px;
-    transform: translate(100%, 0); //x=100%, y=-100%
+    right: -15px;
+
+    @media (min-width: 650px) {
+        transform: translate(-100%, 0%); //x=-100%, y=0%
+        right: 0px;
+    }
+
+    @media (min-width: 1334px) {
+        //1254 + 40 +40        
+        right: 0px;
+        transform: translate(100%, 0%);
+    }
 }
 
 .shopSlider-right {}
 
 .board {
     position: relative;
-    //width: 435px; no pint to set since owl carousel calcs with automatically
+    width: 250px;
     height: 435px;
     margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 650px) {
+        padding-left: 185px;
+        width: 435px + 185px;
+    }
+
+    @media (min-width: 1254px) {
+        margin-left: 0;
+        padding-left: 0;
+    }
 }
 
 .board__img-holder {
@@ -96,7 +139,15 @@
     bottom: 0;
     width: 250px;
     height: 320px;
-    //background-color: #ececec;
+    background-color: #ececec;
+
+    @media (min-width: 650px) {
+        left: 185px;
+    }
+
+    @media (min-width: 1254px) {
+        left: 0;
+    }
 }
 
 .board__img {
@@ -109,8 +160,6 @@
 .shop-link-wrapper {
     display: flex;
     justify-content: center;
-
-
 }
 
 .board-desc {
@@ -118,8 +167,20 @@
     // background-color: #ecb8b8;
     position: absolute;
     top: 196px;
-    left: 216px;
-    //bottom: 125px; 
+    right: 0;
+    z-index: 9;
+    text-align: right;
+
+    @media (min-width: 650px) {
+        right: auto;
+        left: 216px + 185px; //185 == padding
+        text-align: left;
+    }
+
+    @media (min-width: 1254px) {
+        left: 216px;
+    }
+
 }
 
 .board__cat {
